@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+
+
+
+{% block input %}
+ <h1 class="blockquote" style="margin-left: 130px; margin-top: 50px;" >Enter your Sequence number here</h1>
+ <div style="margin-left: 130px; padding-top: 0px ">
+  <form method="POST">
+    <input type="text" name="input_number"/ width="50" height="100">
+    <input class="btn btn-success" type="submit" name="Submit" value="submit"/>
+   </form>
+ </div>
+{% endblock %}
+
+
+
+{% block output %}
+ <div style="margin-left: 130px; padding-top: 50px " >
+
+  <h1 class="blockquote">Entered Sequence numbers are: </h1>
+  <textarea class="form-control">
+  	{{ numbers_list }}
+  </textarea>
+
+</div>
+{% endblock %}
+
+
+{% block clear_number_list %}
+ <a class = "btn btn-danger" style="margin-left: 130px; margin-top: 50px; padding-top: 0px" href={{ url_for("clear_list") }}>Clear List</a>
+{% endblock %}
